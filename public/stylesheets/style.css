@@ -1,0 +1,36 @@
+
+
+#pageHeading {
+	padding-top: 2%;
+}
+
+#output {
+
+    display: inline; /* This will keep it in one line */
+	width: auto; /* for resizing */
+	height: auto; /* for resizing */
+	position: relative; /* to keep it in place */
+}
+
+.carlsjrDeals, .wendysDeals {
+	height: 200px;
+	width: 250px;
+
+}
+
+.imageContainer {
+	display: inline;
+  	width: 100%;
+}
+
+.kfcContainer {
+    max-width: 95%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.kfcContainer table tbody tr td {
+	max-width: 200px;
+}
+.kfcContainer table tbody tr td div p {
+	white-space: normal;
+}
