@@ -54,9 +54,12 @@ block content
                   each wendys_image in wendys_coupons
                     td.imageContainer
                       img.wendysDeals(src= wendys_image)
-
-          div
-            | Burger King deals.
-            embed(src= "https://bk-newzealand-prod-02.s3.amazonaws.com/sites/burgerking.co.nz/files/documents/BKG1175_January_Mailer_05%5B2%5D.pdf" width="100%" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html")
+        br
+        if bk_coupons
+          | Found Burger King deals.
+          embed(src= bk_coupons[0] width="100%" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html")
+        br
+        br
+            
               
       

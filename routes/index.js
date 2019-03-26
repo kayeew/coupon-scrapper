@@ -16,6 +16,8 @@ let carlsjr_counter = 0;
 let wendys_coupons = [];
 let wendys_counter = 0;
 
+let bk_coupons = [];
+
 // =============================================================
 // KFC
 // =============================================================
@@ -87,7 +89,26 @@ axios.get('https://www.wendys.co.nz/news').then((response) => {
   }
 });
 
+// =============================================================
+// Burger King
+// =============================================================
 
+axios.get('https://burgerking.co.nz/offers').then((response) => {
+  // Load the web page source code into a cheerio instance
+  const $ = cheerio.load(response.data);
+
+  const bk = $('.mainImage').children('a');
+
+  // loop through all the elements found
+  for (let i = 0; i < bk.length; i++) {
+    let bk_element = $(bk[i]);
+
+    if (bk_element) {
+      let bk_deal = $(bk_element).attr('href');
+      bk_coupons.push(bk_deal);
+    }
+  }
+});
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -104,7 +125,8 @@ router.post('/getcoupon', function(req, res, next) {
       carlsjr_counter: carlsjr_counter,
       carlsjr_coupons: carlsjr_coupons,
       wendys_counter: wendys_counter,
-      wendys_coupons: wendys_coupons
+      wendys_coupons: wendys_coupons,
+      bk_coupons: bk_coupons
     });
 });
 
