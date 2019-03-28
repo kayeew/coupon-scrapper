@@ -5,7 +5,7 @@ Coupon Scrapper is written with Node.JS + Express and Cheerio that scraps data f
 
 
 ## Motivation:
-As a student, I've always looking for lunch deals 
+As a student, I'm always looking for great lunch deals 
 and its such a hassle to visit each fast food chain website to look for deals. 
 So I thought why not make a site that can scraps deals from all the fast food chain websites with just a click of a button.
 
