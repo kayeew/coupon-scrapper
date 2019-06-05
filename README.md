@@ -1,7 +1,7 @@
 # Coupon Scrapper
 Coupon Scrapper is written with Node.JS + Express and Cheerio that scraps data from KFC, Carl's Jr, Wendy's and Burger King website.
 
-<strong>Live Demo:</strong> https://ancient-taiga-58689.herokuapp.com/
+<strong>Live Demo:</strong> https://coupon-scrapper.herokuapp.com/
 
 
 ## Motivation:
