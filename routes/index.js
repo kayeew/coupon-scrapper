@@ -18,6 +18,7 @@ let wendys_counter = 0;
 
 let bk_coupons = [];
 
+
 // =============================================================
 // KFC
 // =============================================================
@@ -35,12 +36,12 @@ axios.get('https://www.kfc.co.nz/coupons/').then((response) => {
     // proceed if the element exists
     if (data1) {
       kfc_counter++;
-      let deal = $(data1).text();
+      let deal = $(data1).text(); // get deal description
       kfc_coupons.push(deal);
     }
 
     if (data2) {
-      let deal_img = $(data2).attr('src');
+      let deal_img = $(data2).attr('src'); // get img link
       let deal_img_url = "https://www.kfc.co.nz" + deal_img; 
       kfc_coupons_img.push(deal_img_url);
     }
@@ -61,7 +62,7 @@ axios.get('https://www.carlsjr.co.nz/chargrilled-burger-deals/').then((response)
 
     if (carlsjr_element) {
       carlsjr_counter++;
-      let carlsjr_deal = $(carlsjr_element).attr('src');
+      let carlsjr_deal = $(carlsjr_element).attr('src'); // get img link
       let carlsjr_deal_url = "https://www.carlsjr.co.nz" + carlsjr_deal; 
       carlsjr_coupons.push(carlsjr_deal_url);
     }
@@ -82,7 +83,7 @@ axios.get('https://www.wendys.co.nz/news').then((response) => {
 
     if (wendys_element) {
       wendys_counter++;
-      let wendys_deal = $(wendys_element).attr('src');
+      let wendys_deal = $(wendys_element).attr('src'); // get img link
       let wendys_deal_url = "https://www.wendys.co.nz" + wendys_deal; 
       wendys_coupons.push(wendys_deal_url);
     }
@@ -92,11 +93,9 @@ axios.get('https://www.wendys.co.nz/news').then((response) => {
 // =============================================================
 // Burger King
 // =============================================================
-
 axios.get('https://burgerking.co.nz/offers').then((response) => {
   // Load the web page source code into a cheerio instance
   const $ = cheerio.load(response.data);
-
   const bk = $('.mainImage').children('a');
 
   // loop through all the elements found
@@ -104,7 +103,7 @@ axios.get('https://burgerking.co.nz/offers').then((response) => {
     let bk_element = $(bk[i]);
 
     if (bk_element) {
-      let bk_deal = $(bk_element).attr('href');
+      let bk_deal = $(bk_element).attr('href'); // get pdf link
       bk_coupons.push(bk_deal);
     }
   }
